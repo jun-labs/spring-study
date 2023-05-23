@@ -1,4 +1,4 @@
-package project.study.jpa.core.web.presentation
+package project.study.jpa.core.web.presentation.request
 
 class NicknameUpdateRequest(
     private val nickname: String,

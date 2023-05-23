@@ -2,6 +2,7 @@ package project.study.jpa.core.web.presentation
 
 import org.springframework.web.bind.annotation.*
 import project.study.jpa.core.web.application.UserUpdateService
+import project.study.jpa.core.web.presentation.request.NicknameUpdateRequest
 
 @RestController
 @RequestMapping("/api/users")
