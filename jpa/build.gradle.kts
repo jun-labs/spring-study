@@ -44,10 +44,11 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter")
     implementation("org.springframework.boot:spring-boot-starter-web:3.0.4")
 
-    // JPA & QueryDsl
+    // JPA & QueryDsl & Envers
     implementation("org.springframework.boot:spring-boot-starter-data-jpa:3.0.2")
     implementation("com.querydsl:querydsl-jpa:5.0.0:jakarta")
     implementation("com.querydsl:querydsl-core:5.0.0")
+    implementation("org.springframework.data:spring-data-envers:3.0.6")
     kapt("com.querydsl:querydsl-apt:5.0.0:jakarta")
     kapt("com.querydsl:querydsl-kotlin-codegen:5.0.0")
 
