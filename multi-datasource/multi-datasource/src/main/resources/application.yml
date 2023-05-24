@@ -1,0 +1,26 @@
+spring:
+  jpa:
+    hibernate.dialect: ${HIBERNATE_DIALECT}
+    hibernate:
+      ddl-auto: ${DDL_AUTO}
+    properties:
+      hibernate:
+        dialect: ${DIALECT}
+        default_batch_fetch_size: ${DEFAULT_BATCH_FETCH_SIZE}
+        show_sql: true
+        format_sql: true
+    open-in-view: false
+    show-sql: true
+  datasource:
+    primary:
+      driver-class-name: ${DRIVER_CLASS_NAME}
+      jdbc-url: ${JDBC_URL}
+      username: ${USERNAME}
+      password: ${PASSWORD}
+    secondary:
+      driver-class-name: ${DRIVER_CLASS_NAME}
+      jdbc-url: ${JDBC_URL}
+      username: ${USERNAME}
+      password: ${PASSWORD}
+server:
+  port: ${PORT}
