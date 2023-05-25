@@ -1,4 +1,4 @@
-package project.study.jpa.core.web.application
+package project.study.jpa.core.web.user.application
 
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional

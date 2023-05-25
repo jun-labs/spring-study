@@ -1,8 +1,8 @@
-package project.study.jpa.core.web.presentation
+package project.study.jpa.core.web.user.presentation
 
 import org.springframework.web.bind.annotation.*
-import project.study.jpa.core.web.application.UserUpdateService
-import project.study.jpa.core.web.presentation.request.NicknameUpdateRequest
+import project.study.jpa.core.web.user.application.UserUpdateService
+import project.study.jpa.core.web.user.presentation.request.NicknameUpdateRequest
 
 @RestController
 @RequestMapping("/api/users")
