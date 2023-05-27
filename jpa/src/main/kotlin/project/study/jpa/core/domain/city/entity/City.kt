@@ -1,6 +1,8 @@
 package project.study.jpa.core.domain.city.entity
 
 import jakarta.persistence.*
+import org.hibernate.annotations.UpdateTimestamp
+import java.time.Instant
 
 @Entity
 class City(
@@ -9,7 +11,12 @@ class City(
     private var cityId: Long? = null,
 
     @Column
-    private var name: String
+    private var name: String,
+
+    @UpdateTimestamp
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column
+    private val lastModifiedAt: Instant
 ) {
     fun getCityId(): Long? {
         return cityId
@@ -17,6 +24,10 @@ class City(
 
     fun getName(): String {
         return name
+    }
+
+    fun updateName(name: String) {
+        this.name = name
     }
 
     override fun equals(other: Any?): Boolean {
