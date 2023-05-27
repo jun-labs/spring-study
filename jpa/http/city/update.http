@@ -1,0 +1,8 @@
+### City Update API
+
+PUT localhost:8098/api/cities/1
+Content-Type: application/json
+
+{
+  "name": "SEOUL"
+}
