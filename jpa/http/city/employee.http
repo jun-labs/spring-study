@@ -1,0 +1,4 @@
+### Employee Query API
+
+GET localhost:8098/api/cities/1/employees/1
+Content-Type: application/json
