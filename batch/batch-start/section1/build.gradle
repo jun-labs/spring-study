@@ -1,0 +1,48 @@
+plugins {
+    id 'org.springframework.boot' version '2.7.8'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+}
+
+group = 'project.study'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // SpringBoot
+    implementation("org.springframework.boot:spring-boot-starter")
+    implementation("org.springframework.boot:spring-boot-starter-web:2.7.8")
+    implementation(group: 'org.springframework.boot', name: 'spring-boot-starter-validation', version: '2.7.8')
+    implementation(group: 'org.springframework.boot', name: 'spring-boot-starter-aop', version: '2.7.8')
+
+    // Batch
+    implementation(group: 'org.springframework.boot', name: 'spring-boot-starter-batch', version: '2.7.9')
+
+    // Jdbc
+    implementation(group: 'org.springframework.boot', name: 'spring-boot-starter-jdbc', version: '2.7.8')
+
+    // JPA
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+
+    // MySQL
+    implementation(group: 'mysql', name: 'mysql-connector-java', version: '8.0.28')
+    runtimeOnly('mysql:mysql-connector-java')
+
+    // Test
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
+
+    // Lombok
+    compileOnly("org.projectlombok:lombok:1.18.26")
+    testCompileOnly("org.projectlombok:lombok:1.18.26")
+    testAnnotationProcessor("org.projectlombok:lombok:1.18.26")
+    annotationProcessor("org.projectlombok:lombok")
+    annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
