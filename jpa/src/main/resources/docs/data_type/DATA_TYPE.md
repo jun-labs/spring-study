@@ -6,7 +6,11 @@ JPA data type learning.
 &nbsp;&nbsp; [1. TINYINT](#TINYINT) <br/>
 &nbsp;&nbsp; [2. DATETIME / DATE / TIMESTAMP](#날짜) <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [2-1. @Temporal](#Temporal) <br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [2-2. @LastModifiedDate / @UpdateTimestamp](#수정일-업데이트)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [2-2. @LastModifiedDate / @UpdateTimestamp](#수정일-업데이트) <br/>
+&nbsp;&nbsp; [3. Enum / Set](#ENUM과-SET)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [3-1. ENUM](#ENUM) <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [3-2. SET](#SET) <br/>
+
 
 <br/><br/><br/><br/>
 
@@ -387,3 +391,5 @@ Content-Type: application/json
 <br/><br/><br/><br/><br/><br/><br/><br/>
 
 정리해 보면 `@LastModifiedDate`는 `Spring Data JPA와 함께 사용되는 스프링 기반의 어노테이션`이며, `@UpdateTimestamp`는 `Hibernate ORM과 함께 사용되는 Hibernate 기반의 어노테이션`입니다. 둘 다 엔티티의 마지막 수정 날짜를 추적하고 자동으로 갱신되지만 사용하는 ORM 라이브러리에 따라 선택할 수 있습니다.
+
+<br/><br/><br/><br/><br/><br/><br/><br/>
