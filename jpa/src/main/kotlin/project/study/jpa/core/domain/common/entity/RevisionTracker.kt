@@ -12,7 +12,6 @@ import java.io.Serializable
 @RevisionEntity
 @Entity(name = "revision_tracking")
 class RevisionTracker(
-
     @Id
     @RevisionNumber
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,7 +20,6 @@ class RevisionTracker(
     @RevisionTimestamp
     private var createdAt: Long
 ) : Serializable {
-
     fun getRev(): Long? {
         return rev
     }
