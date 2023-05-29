@@ -401,7 +401,7 @@ Envers는 `JPA를 사용해 데이터베이스에서 변경 이력을 추적하�
 
 > [Envers is a Hibernate module that adds auditing capabilities to JPA entities. This documentation assumes you are familiar with Envers, just as Spring Data Envers relies on Envers being properly configured.](https://docs.spring.io/spring-data/envers/docs/current/reference/html/)
 
-<br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/>
 
 먼저 의존성을 추가합니다. 
 
