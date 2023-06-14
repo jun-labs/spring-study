@@ -3,7 +3,7 @@ rootProject.name = "spring-cloud"
 include(
     "api-gateway",
     "api-server",
-    "storage"
+    "log-server"
 )
 
 pluginManagement {

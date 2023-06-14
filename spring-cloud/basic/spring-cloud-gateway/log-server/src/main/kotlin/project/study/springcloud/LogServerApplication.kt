@@ -1,12 +1,11 @@
-package project.study.apiserver
+package project.study.springcloud
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
-class ApiServerApplication
+class SpringCloudApplication
 
 fun main(args: Array<String>) {
-    runApplication<ApiServerApplication>(*args)
+    runApplication<SpringCloudApplication>(*args)
 }
-

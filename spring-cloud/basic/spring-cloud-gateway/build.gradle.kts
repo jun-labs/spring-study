@@ -42,7 +42,7 @@ subprojects {
         implementation("org.jetbrains.kotlin:kotlin-reflect")
         implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
 
-        // SpringBoot
+        // Spring
         implementation("org.springframework.boot:spring-boot-starter-webflux")
 
         // Test
@@ -61,6 +61,14 @@ subprojects {
         imports {
             mavenBom("org.springframework.cloud:spring-cloud-dependencies:${property("springCloudVersion")}")
         }
+    }
+
+    tasks.getByName("bootJar") {
+        enabled = false
+    }
+
+    tasks.getByName("jar") {
+        enabled = true
     }
 
     tasks.withType<KotlinCompile> {
