@@ -1,13 +1,21 @@
 package project.study.r2dbc.common.auth
 
 import project.study.r2dbc.core.domain.user.Role
+import project.study.r2dbc.core.domain.user.User
 
 class MoimUser(
     val userId: Long,
     val nickname: String,
-    val profileImageUrl: String? = null,
+    val profileImageUrl: String,
     val role: Role
 ) {
+
+    constructor(user: User) : this(
+        user.userId!!,
+        user.nickname,
+        user.profileImageUrl,
+        user.role
+    )
 
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
@@ -28,7 +36,7 @@ class MoimUser(
         fun of(
             userId: Long,
             nickname: String,
-            profileImageUrl: String? = null,
+            profileImageUrl: String,
             role: String
         ): MoimUser {
             return MoimUser(
