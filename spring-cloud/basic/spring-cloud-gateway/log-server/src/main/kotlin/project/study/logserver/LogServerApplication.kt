@@ -1,11 +1,11 @@
-package project.study.springcloud
+package project.study.logserver
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
-class SpringCloudApplication
+class LogServerApplication
 
 fun main(args: Array<String>) {
-    runApplication<SpringCloudApplication>(*args)
+    runApplication<LogServerApplication>(*args)
 }

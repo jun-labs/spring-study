@@ -1,8 +1,10 @@
-package project.study.springcloud
+package project.study.logserver
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient
 
+@EnableDiscoveryClient
 @SpringBootApplication
 class SpringCloudApplication
 
