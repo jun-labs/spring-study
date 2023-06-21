@@ -1,0 +1,5 @@
+CREATE TABLE user
+(
+    user_id  BIGINT      NOT NULL AUTO_INCREMENT PRIMARY KEY COMMENT '사용자 PK',
+    nickname VARCHAR(15) NOT NULL COMMENT '닉네임'
+)
