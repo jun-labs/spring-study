@@ -87,7 +87,7 @@ class BookmarkCommandService(
 
 <br/><br/><br/><br/><br/><br/><br/><br/>
 
-더 문제는 북마크가 삭제되지 않은 것에 대해 아무런 예외가 발생하지 않은 것입니다. 즉 게시글은 삭제되었지만 즐겨찾기는 여전히 남아있으며 북마크가 실패한 것에 대한 어떤 상태도 알 수 없는 것입니다.
+더 문제는 북마크가 삭제되지 않은 것에 대해 아무런 예외가 발생하지 않은 것입니다. 즉 게시글은 삭제되었지만 즐겨찾기는 여전히 남아있으며 북마크가 실패한 것에 대한 어떤 상태도 알 수 없습니다.
 
 ![image](./images/mono/spread_01.png)
 
@@ -230,7 +230,7 @@ class PostDeleteIntegrationTest {
 }
 ```
 
-![image](./images/test_result.png)
+![image](./images/mono/test_result.png)
 
 <br/><br/><br/><br/><br/><br/><br/><br/>
 
