@@ -14,6 +14,5 @@ class BookmarkEventHandler(
     fun listenEvent(event: PostDeleteEvent) {
         val post = event.postId
         bookmarkService.deleteAll(post)
-        throw IllegalArgumentException()
     }
 }

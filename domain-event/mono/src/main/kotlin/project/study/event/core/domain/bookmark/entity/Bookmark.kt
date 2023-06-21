@@ -17,10 +17,13 @@ class Bookmark(
 ) {
     @Enumerated(EnumType.STRING)
     @Column(columnDefinition = "ENUM('TRUE', 'FALSE')", name = "deleted")
-    private var deleted: Deleted? = Deleted.FALSE
+    private var _deleted: Deleted? = Deleted.FALSE
+
+    val delete: Deleted
+        get() = _deleted!!
 
     fun delete() {
-        this.deleted = Deleted.TRUE
+        this._deleted = Deleted.TRUE
     }
 
     override fun equals(other: Any?): Boolean {
