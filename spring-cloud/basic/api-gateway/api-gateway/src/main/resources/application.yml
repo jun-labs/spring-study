@@ -1,0 +1,27 @@
+server:
+  port: ${PORT}
+
+spring:
+  main:
+    web-application-type: reactive
+  application:
+    name: ${NAME}
+  cloud:
+    gateway:
+      routes:
+        - id: ${ID}
+          uri: ${URI}
+          predicates:
+            - Path=/api/**
+        - id: ${ID}
+          uri: ${URI}
+          predicates:
+            - Path=/api/**
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+
+locations:
+  first: ${FIRST}
+  second: ${FIRST}
