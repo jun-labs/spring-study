@@ -9,7 +9,7 @@ Multi-DataSource learning repository.
 회사에서 기존에 사용하던 데이터베이스(MySQL)와 새로운 데이터베이스의 버전이 달라서 고민했던 내용입니다. 기존 데이터베이스는 5.XX 버전을 사용 중이었고 신규 런칭 프로젝트는 8.XX 버전을 사용하게
 되었습니다.
 
-![ex_screenshot](./src/main/resources/images/images.png)
+![ex_screenshot](../src/main/resources/images/images.png)
 
 <br/><br/><br/><br/><br/><br/><br/><br/>
 
