@@ -18,3 +18,7 @@
 &nbsp;&nbsp; [4. Validation]() <br/>
 
 &nbsp;&nbsp; [5. Multi Datasource]() <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [- 5-1. 같은 데이터베이스, 다른 버전](https://github.com/study-history/spring-study/tree/main/multi-datasource/multi-datasource/resources)<br/>
+
+&nbsp;&nbsp; [6. Domain Event]() <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [- 6-1. 모놀리식 서비스에서 도메인 이벤트 사용](https://github.com/study-history/spring-study/blob/main/domain-event/mono/resource/MONO.md)<br/>
