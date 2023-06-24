@@ -1,0 +1,12 @@
+spring:
+  redis:
+    connect-timeout: ${CONNECT_TIMEOUT}
+    host: ${HOST}
+    port: ${PORT}
+  datasource:
+    driver-class-name: ${DRIVER_CLASS_NAME}
+    url: ${URL}
+    username: ${USERNAME}
+    password: ${PASSWORD}
+server:
+  port: ${PORT}
