@@ -3,6 +3,7 @@
 스프링 학습 저장소.
 
 &nbsp;&nbsp; [1. Basic]()<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [- 1.1 Spring-Basic](https://github.com/study-history/spring-study/tree/main/basic/basic/spring_basic/resource) <br/>
 
 &nbsp;&nbsp; [2. JPA](https://github.com/study-history/spring-study/tree/main/jpa) <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - 2.1 Basic <br/>
