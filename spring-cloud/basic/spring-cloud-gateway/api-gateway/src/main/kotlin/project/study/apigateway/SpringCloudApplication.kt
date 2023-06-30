@@ -1,4 +1,4 @@
-package project.study.logserver
+package project.study.apigateway
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
