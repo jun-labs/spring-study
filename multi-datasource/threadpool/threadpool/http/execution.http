@@ -1,0 +1,4 @@
+### API ###
+
+GET localhost:${PORT}/api/servers
+
