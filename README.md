@@ -27,7 +27,7 @@
 
 &nbsp;&nbsp; [5. Multi Datasource]() <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [- 5-1. 같은 데이터베이스, 다른 버전](https://github.com/study-history/spring-study/tree/main/multi-datasource/multi-datasource/resources)<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [- 5-2. 자바/스프링의 쓰레드 모델 (feat.사용자 요청)](https://github.com/study-history/spring-study/tree/main/multi-datasource/threadpool/threadpool/resource/thread)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [- 5-2. 자바/스프링의 쓰레드 모델 (feat.사용자 요청)](https://github.com/study-history/spring-study/tree/main/multi-datasource/threadpool/resource/thread)<br/>
 
 <br/>
 
