@@ -1,9 +1,20 @@
 ## 🍃 Spring
 
-스프링 학습 저장소.
+스프링/스프링 부트 학습 저장소.
 
-&nbsp;&nbsp; [1. Basic]()<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [- 1.1 Spring-Basic](https://github.com/study-history/spring-study/tree/main/basic/basic/spring_basic/resource) <br/>
+<br/>
+
+![images](./resource/images/spring-logo.png)
+
+<div align="center">
+
+[![Release](https://img.shields.io/badge/-%F0%9F%93%9A%20Spring_Framework-brightgreen)](https://github.com/spring-projects/spring-framework)
+</div>
+
+<br/><br/><br/><br/>
+
+&nbsp;&nbsp; [1. Basic](https://github.com/study-history/spring-study/tree/main/basic)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [- 1.1 Spring-Basic](https://github.com/study-history/spring-study/tree/main/basic) <br/>
 
 <br/>
 
