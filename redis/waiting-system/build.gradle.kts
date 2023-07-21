@@ -3,7 +3,6 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
     kotlin("jvm")
     kotlin("plugin.spring") apply false
-
     id("org.springframework.boot") apply false
     id("io.spring.dependency-management")
 }
@@ -21,7 +20,6 @@ allprojects {
     }
 }
 
-extra["springCloudVersion"] = "2022.0.3"
 subprojects {
     apply(plugin = "org.jetbrains.kotlin.jvm")
     apply(plugin = "org.jetbrains.kotlin.plugin.spring")
@@ -36,19 +34,8 @@ subprojects {
     }
 
     dependencies {
-        // Kotlin
-        implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
-        implementation("io.projectreactor.kotlin:reactor-kotlin-extensions")
-        implementation("org.jetbrains.kotlin:kotlin-reflect")
-        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
-
-        // Spring
-        implementation("org.springframework.boot:spring-boot-starter-webflux")
-        implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
-
         // Test
         testImplementation("org.springframework.boot:spring-boot-starter-test")
-        testImplementation("io.projectreactor:reactor-test")
 
         // Lombok
         compileOnly("org.projectlombok:lombok")
@@ -73,7 +60,7 @@ subprojects {
         }
     }
 
-    tasks.withType<Test> {
+    tasks.test {
         useJUnitPlatform()
     }
 }
