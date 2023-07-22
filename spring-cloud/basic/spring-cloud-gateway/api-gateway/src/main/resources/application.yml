@@ -1,1 +1,31 @@
+spring:
+  kafka:
+    key: ${KEY}
+    topic: ${TOPIC}
+    bootstrap-servers: ${BOOTSTRAP_SERVERS}
+    producer:
+      group-id: ${GROUP_ID}
+
+  main:
+    web-application-type: ${WEB_APPLICATION_TYPE}
+  application:
+    name: ${NAME}
+
+  r2dbc:
+    url: ${URL}
+    username: ${USERNAME}
+    password: ${PASSWORD}
+  cloud:
+    gateway:
+      default-filters:
+        - name: ${NAME}
+          args:
+            baseMessage: ${BASE_MESSAGE}
+            preLogger: ${PRE_LOGGER}
+            postLogger: ${POST_LOGGER}
+      routes:
+        - id: ${ID}
+          predicates:
+            - Path=${PATH}
+          uri: ${URL}
 

@@ -7,6 +7,8 @@ import org.springframework.data.redis.connection.RedisConnectionFactory
 import org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory
 import org.springframework.data.redis.core.RedisTemplate
 import org.springframework.data.redis.serializer.StringRedisSerializer
+import org.springframework.orm.jpa.JpaTransactionManager
+import org.springframework.transaction.PlatformTransactionManager
 
 @Configuration
 class RedisConfiguration(
@@ -27,6 +29,12 @@ class RedisConfiguration(
             this.setConnectionFactory(redisConnectionFactory())
             this.keySerializer = StringRedisSerializer()
             this.valueSerializer = StringRedisSerializer()
+            this.setEnableTransactionSupport(true)
         }
+    }
+
+    @Bean
+    fun transactionManager(): PlatformTransactionManager {
+        return JpaTransactionManager()
     }
 }

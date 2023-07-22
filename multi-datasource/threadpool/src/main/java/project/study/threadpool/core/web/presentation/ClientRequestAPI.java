@@ -62,7 +62,7 @@ public class ClientRequestAPI {
 
     @GetMapping
     public ResponseEntity<String> ok() {
-        for (int index = START; index < END; index++) {
+        for (int index = 0; index < 8; index++) {
             Thread newThread = new Thread(() -> {
                 log.info("--------------------x>");
                 String result = restTemplate
