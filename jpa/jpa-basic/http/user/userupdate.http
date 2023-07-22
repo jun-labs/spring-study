@@ -1,0 +1,9 @@
+### USER Update API
+
+POST localhost:8088/api/users/1
+Content-Type: application/json
+
+{
+  "nickname": "HELLO!",
+  "weight": 75
+}
