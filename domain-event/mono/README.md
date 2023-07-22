@@ -4,7 +4,7 @@ Domain Event learning repository.
 
 <br/>
 
-![image](./resource/images/spring_logo.svg.png)
+![image](../../resource/images/spring-logo.png)
 
 
 <div align="center">
