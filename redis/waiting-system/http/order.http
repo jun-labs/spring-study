@@ -1,0 +1,7 @@
+POST {{api}}/orders
+Content-Type: application/json
+
+{
+  "productId": 1,
+  "price": 3000
+}
