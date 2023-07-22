@@ -9,7 +9,12 @@
 </div>
 
 <br/>
-Caffeine is a high performance, near optimal caching library.
+
+<div align="center">
+
+`Caffeine is a high performance, near optimal caching library.`
+
+</div>
 
 <div align="center">
 
@@ -24,8 +29,6 @@ Caffeine is a high performance, near optimal caching library.
 ## 1. Caffeine Cache
 
 고성능의 최적의 캐싱 라이브러리. 먼저 어떻게 Caffeine이 이를 최적화 시키는지에 대해 살펴보겠습니다. 
-
-> Caffeine is a high performance, near optimal caching library.
 
 - Guava Cache와 ConCurrentHashMap을 개선한 [ConcurrentLinkedHashMap](https://github.com/ben-manes/concurrentlinkedhashmap)을 바탕으로 구현
 - In-Mermory 기반
