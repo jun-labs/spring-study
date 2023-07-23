@@ -14,13 +14,34 @@ Hibernate/JPA learning repository.
 
 ## CasCade
 
-JPA에서 옵션으로 사용할 수 있는 CasCade는 데이터베이스의 [참조 무결성](https://en.wikipedia.org/wiki/Referential_integrity) 입니다. 참조 무결성이란 데이터베이스 상의 참조가 모두 유효함을 말합니다.
+Cascade는 데이터베이스 외래 키에 대한 작업을 수행할 때 사용할 수 있는 옵션으로, 외래 키 값에 대한 업데이트나 삭제 작업이 발생했을 때 관련된 다른 테이블의 행에도 해당 작업을 자동으로 전파시키는 기능을 말합니다.
 
->Referential integrity is a property of data stating that all its references are valid. In the context of relational databases, it requires that if a value of one attribute (column) of a relation (table) references a value of another attribute (either in the same or a different relation), then the referenced value must exist.
+> [CASCADE in SQL is used to simultaneously delete or update an entry from both the child and parent table. The keyword CASCADE is used as a conjunction while writing the query of ON DELETE or ON UPDATE. If the cascade keyword is added to a query written for the parent table, then both the parent and child tables change accordingly on the execution of the query.](https://www.scaler.com/topics/sql/cascade-in-sql/)
 
 <br/><br/><br/><br/><br/><br/><br/><br/>
 
-이는 아래와 같이 사용할 수 있는데요, 각각의 옵션에 대해 살펴보겠습니다.
+JPA에서도 비슷한데요, CasCade 옵션을 통해 엔티티가 변경될 때 `상태 변화를 전파` 시킬 수 있습니다. `엔티티의 상태`는 크게 네 가지가 존재하며 아래와 같습니다.
+
+- Transient: 객체를 생성하거나 값을 부여해도 JPA/Hibernate가 객체에 대해 아무것도 모르는 상태.
+
+- Persistent: 엔티티를 저장한 순간 JPA가 이를 감지하는 상태. 이때 주의해야 할 점은 save 메서드를 호출 했다고 해서 곧 바로 DB에 저장되지는 않습니다. JPA가 영속 상태로 관리하고 있다가 후에 데이터를 저장합니다. `Write Behind`
+
+- Detached: JPA가 더이상 관리하지 않는 상태. JPA가 제공해주는 기능들을 사용하려면 다시 영속 상태로 만들어야 합니다.
+- Removed: JPA가 관리하는 상태이긴 하지만, 실제 커밋이 일어날 때 삭제되는 상태.
+
+
+
+
+<br/><br/><br/><br/><br/><br/><br/><br/>
+
+이는 [엔티티 라이프 사이클(Life Cycle)](https://www.mastertheboss.com/java-ee/jpa/understanding-jpa-entity-life-cycle/) 이라고 합니다. 
+
+![image](./resources/images/life-cycle.png)
+
+
+<br/><br/><br/><br/><br/><br/><br/><br/>
+
+CasCade 옵션은 아래와 같이 사용할 수 있는데요, CascadeType은 Enum으로 제공되며 아래와 같은 설정이 있습니다. 사용법에 대해서는 관련된 설명/자료가 많으므로 헷갈리는 상황에 대해서만 살펴보겠습니다.
 
 ```kotlin
 @Entity
@@ -31,9 +52,6 @@ class City(
     private var _districts: MutableList<District> = ArrayList()
 }
 ```
-<br/><br/><br/><br/><br/><br/><br/><br/>
-
-CascadeType은 Enum으로 제공되며 아래와 같은 설정이 있습니다.
 
 ```kotlin
 public enum CascadeType { 
@@ -67,29 +85,80 @@ public enum CascadeType {
 }
 ```
 
-<br/><br/><br/><br/><br/><br/><br/><br/>
 
-이는 엔티티의 상태가 변경될 때 `상태 변화를 전파시키는 옵션`입니다. 엔티티의 상태는 크게 네 가지가 존재하는데요, 이는 아래와 같습니다.
-
-- Transient: 객체를 생성하거나 값을 부여해도 JPA/Hibernate가 객체에 대해 아무것도 모르는 상태.
-
-- Persistent: 엔티티를 저장한 순간 JPA가 이를 감지하는 상태. 이때 주의해야 할 점은 save 메서드를 호출 했다고 해서 곧 바로 DB에 저장되지는 않습니다. JPA가 영속 상태로 관리하고 있다가 후에 데이터를 저장합니다. `Write Behind`
-
-- Detached: JPA가 더이상 관리하지 않는 상태. JPA가 제공해주는 기능들을 사용하려면 다시 영속 상태로 만들어야 합니다.
-- Removed: JPA가 관리하는 상태이긴 하지만, 실제 커밋이 일어날 때 삭제되는 상태.
-
-> 이와 관련된 설명/자료가 많기 때문에 헷깔리는 상황에 대해서만 살펴보겠습니다. 
-
-<br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/> 
 
 
 ## CasCadeType.REMOVE vs orphanRemoval = true
 
-결론부터 말하면 CascadeType.REMOVE와 orphanRemoval = true는 부모 엔티티를 삭제하면 자식 엔티티도 삭제합니다. 하지만 부모 엔티티에서 자식 엔티티 제거할 때 CascadeType.REMOVE는 자식 엔티티가 그대로 남아있는 반면, orphanRemoval = true는 자식 엔티티를 제거합니다.
+결론부터 말하면 CascadeType.REMOVE와 orphanRemoval = true는 `부모 엔티티를 삭제하면 자식 엔티티도 함께 삭제`합니다. 하지만 부모 엔티티에서 자식 엔티티 제거할 때 CascadeType.REMOVE는 자식 엔티티가 그대로 남아있는 반면, orphanRemoval = true는 자식 엔티티를 제거합니다. 테스트를 통해 이를 알아보겠습니다. 
+
+
+<br/><br/><br/><br/>
+
+
+우선 팀(Team)과 회원(Member)는 일대 다의 관계입니다. 회원 쪽에는 `CasCadeType이 REMOVE`로 지정되어 있고 `orphanRemoval에 대한 설정은 없습니다.`
+
+```kotlin
+@Entity
+class Member(
+    ......
+) {
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "team_id")
+    private var team: Team? = null
+        
+    ......
+```
+
+```kotlin
+
+@Entity
+class Team(
+    ......
+) {
+    @OneToMany(mappedBy = "team", cascade = [CascadeType.PERSIST, CascadeType.REMOVE])
+    private var _members: MutableList<Member> = ArrayList()
+
+    ......
+```
+
+
+<br/><br/><br/><br/><br/><br/><br/><br/>
+
+다음은 도시(City)와 구역(District)의 관계입니다. 마찬가지로 일대 다의 관계입니다.
+
+````kotlin
+@Entity
+class City(
+    ......
+) {
+    @OneToMany(mappedBy = "city", cascade = [CascadeType.PERSIST, CascadeType.REMOVE], orphanRemoval = true)
+    private var _districts: MutableList<District> = ArrayList()
+
+    ......
+````
+```kotlin
+@Entity
+class District(
+    ......
+) {
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "city_id")
+    private var city: City? = null
+
+    ......
+```
+
+<br/><br/><br/><br/><br/><br/><br/><br/>
+
+먼저 `단순 CasCadeType.REMOVE`를 테스트 해보겠습니다. 팀에서 회원을 등록하고 영속화한 후 다시 회원들을 제거합니다. 
 
 ```kotlin
 class MemberCascadeTest {
 
+    ......
+    
     @Test
     @DisplayName("orphanRemoval 옵션 없이 CascadeType만 Remove라면 연관관계를 끊어도 자식이 삭제되지 않는다.")
     fun cascade_remove_test() {
@@ -109,8 +178,22 @@ class MemberCascadeTest {
 }
 ```
 
+
+
+<br/><br/><br/><br/><br/><br/><br/><br/>
+
+결과를 보면 여전히 두 명인 것을 알 수 있는데요, 즉 `연관관계를 제거해도 이를 삭제하지 않습니다.`
+
+![image](./resources/images/cascade-remove.png)
+
+<br/><br/><br/><br/><br/><br/><br/><br/>
+
+반면 `orphanRemoval = true` 옵션을 준 경우는 진짜로 자식이 삭제됩니다. 정리해 보면 `"모두 부모가 삭제될 때 함께 삭제되는 것은 맞지만 orphanRemoval 옵션을 주지 않는다면 단순히 연관관계를 끊었다고 해서 자식 엔티티가 삭제되지는 않는다."` 입니다. 
+
 ```kotlin
 class CityCascadeTest {
+    
+    ......
     
     @Test
     @DisplayName("orphanRemoval=true 라면 부모의 객체 라이프사이클을 따르게 된다.")
@@ -132,3 +215,5 @@ class CityCascadeTest {
     }
 }
 ```
+
+![image](./resources/images/orphan-removal.png)
