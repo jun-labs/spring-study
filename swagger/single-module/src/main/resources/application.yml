@@ -1,0 +1,18 @@
+server:
+  port: ${PORT}
+
+springdoc:
+  packages-to-scan: ${PACKAGE_TO_SCAN}
+  default-consumes-media-type: ${CONSUMES_MEDIA_TYPE}
+  default-producer-media-type: ${PRODUCER_MEDIA_TYPE}
+  swagger-ui:
+    path: /
+    tags-sorter: alpha
+    operations-sorter: alpha
+  api-docs:
+    path: /api-docs/json
+    groups:
+      enabled: true
+      cache:
+        disabled: true
+
