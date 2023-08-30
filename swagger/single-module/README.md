@@ -45,7 +45,7 @@ SpringDocs OpenAPI single module practice.
 ./gradlew build
 ````
 
-<br/><br/><br/><br/>
+<br/><br/>
 
 ## Result
 
@@ -54,12 +54,12 @@ You can see the Swagger UI by running the application and accessing `http://loca
 
 ![image](resource/images/result.png)
 
-<br/><br/><br/><br/><br/><br/>
+<br/><br/><br/>
 
 ## Env
 
 &nbsp;&nbsp; - Kotlin 1.7  <br/>
 &nbsp;&nbsp; - SpringBoot 3.0 <br/> 
-&nbsp;&nbsp; - Springdoc Openapi 2.4
+&nbsp;&nbsp; - Springdoc Openapi 2.0.4
 
 <br/>
