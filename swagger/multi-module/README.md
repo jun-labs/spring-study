@@ -65,11 +65,12 @@ After the build, you can see that api-spec is extracted in json format.
 {
   "openapi" : "3.0.1",
   "info" : {
-    "title" : "API documentation",
-    "version" : "0.0.1"
+    "title" : "Product API Documentation",
+    "description" : "Product API Documentation",
+    "version" : "1.0.0"
   },
   "servers" : [ {
-    "url" : "http://localhost"
+    "url" : "www.product-domain.com"
   } ],
   "tags" : [ ],
   "paths" : {
@@ -78,14 +79,14 @@ After the build, you can see that api-spec is extracted in json format.
         "tags" : [ "Product" ],
         "summary" : "Product details searching.",
         "description" : "API for searching product details by id.",
-        "operationId" : "product-",
+        "operationId" : "product-search-by-id-documentation-test/product_search_by_id_test",
         "parameters" : [ {
           "name" : "id",
           "in" : "path",
-          "description" : "",
+          "description" : "Product id.",
           "required" : true,
           "schema" : {
-            "type" : "string"
+            "type" : "number"
           }
         } ],
         "responses" : {
@@ -98,9 +99,6 @@ After the build, you can see that api-spec is extracted in json format.
                 },
                 "examples" : {
                   "product-search-by-id-documentation-test/product_search_by_id_test" : {
-                    "value" : "{\"id\":1,\"name\":\"PUMA\"}"
-                  },
-                  "product-documentation-test/product_search_by_id_test" : {
                     "value" : "{\"id\":1,\"name\":\"PUMA\"}"
                   }
                 }
