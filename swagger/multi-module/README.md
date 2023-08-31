@@ -76,9 +76,9 @@ After the build, you can see that api-spec is extracted in json format.
     "/api/products/{id}" : {
       "get" : {
         "tags" : [ "Product" ],
-        "summary" : "Greets a user.",
+        "summary" : "Product details searching.",
         "description" : "API for searching product details by id.",
-        "operationId" : "multi-module-application-tests/product_search_by_id_testproduct-documentation-test/product_search_by_id_test",
+        "operationId" : "product-",
         "parameters" : [ {
           "name" : "id",
           "in" : "path",
@@ -97,7 +97,7 @@ After the build, you can see that api-spec is extracted in json format.
                   "$ref" : "#/components/schemas/api-products-id1407954343"
                 },
                 "examples" : {
-                  "multi-module-application-tests/product_search_by_id_test" : {
+                  "product-search-by-id-documentation-test/product_search_by_id_test" : {
                     "value" : "{\"id\":1,\"name\":\"PUMA\"}"
                   },
                   "product-documentation-test/product_search_by_id_test" : {
