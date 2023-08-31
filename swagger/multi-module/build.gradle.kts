@@ -79,11 +79,3 @@ subprojects {
         dependsOn("copyOpenApiSpecToStatic")
     }
 }
-
-openapi3 {
-    this.setServer("https://localhost:8080")
-    title = "Swagger Sample API Documentation"
-    description = "Swagger Sample API Documentation"
-    version = "1.0.0"
-    format = "json"
-}
