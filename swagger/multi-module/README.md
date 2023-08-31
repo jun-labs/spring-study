@@ -30,6 +30,7 @@ Swagger with [Restdocs-api-spec]((https://github.com/ePages-de/restdocs-api-spec
 Please run the application after modifying the port in `docker-compose.yml`. You can put the json file inside the docker or enter it directly into the UI. I'll leave the part about document automation to you for learning.
 
 ````text
+$ cd docker
 $ docker-compose up   
 
 $ ./gradlew :user-api:bootRun
@@ -58,7 +59,7 @@ $ ./gradlew :product-api:build
 
 ## Result
 
-You can see the result of the api-spec being extracted as json.
+After the build, you can see that api-spec is extracted in json format.
 
 ````json
 {
@@ -74,7 +75,7 @@ You can see the result of the api-spec being extracted as json.
   "paths" : {
     "/api/products/{id}" : {
       "get" : {
-        "tags" : [ "products", "Product" ],
+        "tags" : [ "Product" ],
         "summary" : "Greets a user.",
         "description" : "API for searching product details by id.",
         "operationId" : "multi-module-application-tests/product_search_by_id_testproduct-documentation-test/product_search_by_id_test",
@@ -130,7 +131,13 @@ You can see the result of the api-spec being extracted as json.
 }
 ````
 
-<br/><br/><br/>
+<br/><br/><br/><br/><br/><br/>
+
+You can also use API documents in conjunction with the Swagger UI/Editor as follows.
+
+
+![image](resources/images/result.png)
+
 
 ## Env
 
