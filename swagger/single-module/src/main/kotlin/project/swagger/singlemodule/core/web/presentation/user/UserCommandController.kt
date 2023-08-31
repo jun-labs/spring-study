@@ -18,8 +18,8 @@ class UserCommandController(
     private val userService: UserService
 ) {
 
-    @UserSignupApiSpec
     @PostMapping
+    @UserSignupApiSpec
     fun signup(@RequestBody request: UserSignupRequest): ResponseEntity<UserSignupResponse> {
         val newUserId = userService.save(request.toEntity())
         return ResponseEntity.ok(UserSignupResponse(newUserId))
