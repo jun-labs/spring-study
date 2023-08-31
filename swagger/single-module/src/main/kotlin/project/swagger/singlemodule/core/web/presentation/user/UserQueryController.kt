@@ -30,7 +30,7 @@ class UserQueryController(
 
     @GetMapping
     @UserSearchByNameApiSpec
-    fun findByName(
+    fun findUserByName(
         @Schema(accessMode = Schema.AccessMode.READ_ONLY)
         @RequestParam("name") name: String,
     ): ResponseEntity<UserResponse> {
