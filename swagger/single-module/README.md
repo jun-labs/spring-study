@@ -26,7 +26,7 @@ SpringDocs OpenAPI single module practice.
 ## Run Application
 
 ````text
-./gradlew bootRun
+$ ./gradlew bootRun
 ````
 
 <br/><br/>
@@ -34,7 +34,7 @@ SpringDocs OpenAPI single module practice.
 ## Run Test
 
 ````text
-./gradlew test
+$ ./gradlew test
 ````
 
 <br/><br/>
@@ -42,7 +42,7 @@ SpringDocs OpenAPI single module practice.
 ## Run Build
 
 ````text
-./gradlew build
+$ ./gradlew build
 ````
 
 <br/><br/>
@@ -60,6 +60,6 @@ You can see the Swagger UI by running the application and accessing `http://loca
 
 &nbsp;&nbsp; - Kotlin 1.7  <br/>
 &nbsp;&nbsp; - SpringBoot 3.0 <br/> 
-&nbsp;&nbsp; - Springdoc Openapi 2.0.4
+&nbsp;&nbsp; - Springdocs Openapi 2.0.4
 
 <br/>
