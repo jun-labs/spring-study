@@ -157,4 +157,4 @@ import java.lang.annotation.Inherited
 @Inherited
 @Retention(AnnotationRetention.RUNTIME)
 @Target(AnnotationTarget.CLASS, AnnotationTarget.FUNCTION)
-annotation class UserSearchByNameApiSpec()
+annotation class UserSearchByNameApiSpec
