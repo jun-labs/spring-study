@@ -10,6 +10,7 @@ import org.springframework.restdocs.mockmvc.RestDocumentationRequestBuilders.get
 import org.springframework.test.context.ActiveProfiles
 import org.springframework.test.web.servlet.MockMvc
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers.status
+import project.swagger.multimodule.test.user.snippet.UserSnippet.Companion.USER_SEARCH_BY_NAME_BAD_REQUEST_HANDLER
 import project.swagger.multimodule.test.user.snippet.UserSnippet.Companion.USER_SEARCH_BY_NAME_HANDLER
 
 @WebMvcTest
@@ -22,11 +23,20 @@ class UserSearchByNameDocumentationTest {
     private lateinit var mockMvc: MockMvc
 
     @Test
-    fun contextLoads() {
+    fun user_search_by_name_success_test() {
         mockMvc.perform(
             get("/api/users")
                 .queryParam("name", "Jung")
         ).andExpect(status().isOk)
             .andDo(USER_SEARCH_BY_NAME_HANDLER)
+    }
+
+    @Test
+    fun user_search_by_name_failure_test() {
+        mockMvc.perform(
+            get("/api/users")
+                .queryParam("name", "a")
+        ).andExpect(status().isBadRequest)
+            .andDo(USER_SEARCH_BY_NAME_BAD_REQUEST_HANDLER)
     }
 }
